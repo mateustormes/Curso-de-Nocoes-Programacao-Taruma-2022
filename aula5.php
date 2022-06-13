@@ -74,6 +74,7 @@
                 echo "</tr>";
             } 
         }
+        //teste .. github
         echo "</table>";
         //echo "<br>";
         //for ($posicao=count($arrayPessoas)-1; $posicao > -1; $posicao--) { 
