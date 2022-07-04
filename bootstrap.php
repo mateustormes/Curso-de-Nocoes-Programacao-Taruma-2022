@@ -22,28 +22,37 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
+                <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="color:red;">Honda Civic 1</h5>
+                    <p>Venda de Honda Civic Branco por X.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
             <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Honda Civic</h5>
+                <h5 style="color:red;">Honda Civic 2</h5>
                 <p>Venda de Honda Civic Branco por X.</p>
             </div>
             </div>
             <div class="carousel-item">
             <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Honda Civic</h5>
+                <h5 style="color:red;" >Honda Civic 3</h5>
                 <p>Venda de Honda Civic Branco por X.</p>
             </div>
             </div>
+
             <div class="carousel-item">
-            <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Honda Civic</h5>
-                <p>Venda de Honda Civic Branco por X.</p>
-            </div>
+                <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="color:red;" >Honda Civic 4</h5>
+                    <p>Venda de Honda Civic Branco por X.</p>
+                </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">

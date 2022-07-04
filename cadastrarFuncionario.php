@@ -17,8 +17,52 @@
             </form>
         </div>
     </nav>
-    <form action="" method="POST">
-        
+    <form class="form-control" action="" method="POST">
+        <label>Nome</label>
+        <input class="form-control" type="text" name="nome" required><br>
+
+        <label>Cargo</label>
+        <input class="form-control" type="text" name="cargo" required><br>
+
+        <label>Salário</label>
+        <input class="form-control" type="number" name="salario" required><br>
+
+        <label>Descrição</label>
+        <input class="form-control" type="text" name="descricao" required><br>
+
+        <button type="submit" class="form-control btn btn-success">
+          Salvar
+        </button>
     </form>
+    <?php
+      function conexao(){
+        $nomeServidor = "localhost";
+        $database = "database";
+        $usuario = "root";
+        $senha = "";
+
+        //criar a conexão
+        $conexao = mysqli_connect($nomeServidor, $usuario, $senha, $database);
+        //checagem de conexão
+        if(!$conexao){
+          die("Conexão Falhou: ".mysqli_connect_error());
+        }else{
+          echo "Conexão com Sucesso!";
+        }
+        return $conexao;
+      }
+
+      function selectFuncionarios(){
+        $conexao = conexao();
+        //executar o comando desejado
+        $comando = "SELECT * FROM FUNCIONARIOS";
+        $resultado_comando = mysqli_query($conexao, $comando) or die('Erro no envio do comando: '.$comando.' '.mysqli_error($conexao));
+        //exibir os dados da nossa tabela
+        while($indice = mysqli_fetch_array($resultado_comando)){
+          print_r($indice);
+        }
+      }
+      selectFuncionarios();
+    ?>
     </body>
 </html>
