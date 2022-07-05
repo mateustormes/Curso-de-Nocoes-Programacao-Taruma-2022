@@ -52,17 +52,22 @@
         return $conexao;
       }
 
-      function selectFuncionarios(){
-        $conexao = conexao();
-        //executar o comando desejado
-        $comando = "SELECT * FROM FUNCIONARIOS";
-        $resultado_comando = mysqli_query($conexao, $comando) or die('Erro no envio do comando: '.$comando.' '.mysqli_error($conexao));
-        //exibir os dados da nossa tabela
-        while($indice = mysqli_fetch_array($resultado_comando)){
-          print_r($indice);
-        }
+      function inserir($nome, $cargo, $salario, $descricao){
+         $conexao = conexao();
+         $comando = "INSERT INTO funcionarios(nome,cargo,salario,descricao) VALUES ('$nome', '$cargo', $salario, '$descricao')";
+         
+         if(mysqli_query($conexao, $comando)){
+          echo "Registro do Funcionário efetuado com sucesso!";
+         }else{
+          echo "Erro: ".$comando."<br>".mysqli_error($conexao);
+         }
       }
-      selectFuncionarios();
+
+      if(isset($_POST['nome'])){
+        print_r($_POST);
+        inserir($_POST['nome'], $_POST['cargo'], $_POST['salario'], $_POST['descricao']);
+      }
+      
     ?>
     </body>
 </html>
