@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <!-- <script type='text/javascript' src='scripts/bootstrap.js'></script> -->
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.css'>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
   </head>
   <body>
     <nav class="navbar bg-dark">
@@ -42,7 +46,7 @@
           function selectFuncionarios(){
             $conexao = conexao();
             //executar o comando desejado
-            $comando = "SELECT * FROM FUNCIONARIOS";
+            $comando = "SELECT * FROM FUNCIONARIOS ORDER BY NOME";
             $resultado_comando = mysqli_query($conexao, $comando) or die('Erro no envio do comando: '.$comando.' '.mysqli_error($conexao));
             //exibir os dados da nossa tabela
             return $resultado_comando;
@@ -75,6 +79,7 @@
                 <?php
                 if(isset($_GET['id'])){
                     deletar($_GET['id']);
+                    header("Location: funcionarios.php");
                 }
                 while($indice = mysqli_fetch_array($funcionarios)){
                     
